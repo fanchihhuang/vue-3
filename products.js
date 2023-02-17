@@ -21,7 +21,7 @@ createApp({
         })
         .catch((err) => {
             alert(err.data.message);
-            location.href="login.html";
+            location.href="index.html";
         })
        } ,
        getData(){
