@@ -74,11 +74,15 @@ createApp({
 
        delProduct(){
         const url=`https://vue3-course-api.hexschool.io/v2/api/likefanzi/admin/product/${this.temp.id}`
-
+        
         axios.delete(url)
         .then((res) => {
             alert(res.data.message);
-            this.getData();
+            this.products.forEach((item,index)=>{
+                if(item.id===this.temp.id){
+                   this.products.splice(index,1); 
+                }                
+            })    
         })
         .catch((err) => {
             alert(err.data.message);
